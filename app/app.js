@@ -27,7 +27,8 @@
 
                 var m = data.val(),
                     $m = $chatroom.querySelector('[data-id="' + data.getKey() + '"]'),
-                    $bubble;
+                    $bubble,
+                    $name;
 
                 if (!$m) {
                     
@@ -35,13 +36,20 @@
                     $m.setAttribute('data-id', data.getKey());
                     
                     if (m.by === 'system') {
+
                         $m.classList.add('uk-text-center');
                         $m.classList.add('font-0-8-em');
                         $m.innerHTML = m.message;
+                        
                     } else {
                         
                         $m.classList.add('message');
-                        $m.innerHTML = '<small>' + m.by + '</small><div class="bubble"></div>';
+
+                        $name = document.createElement('small');
+                        $name.innerText = m.by;
+                        $m.appendChild($name);
+
+                        $m.innerHTML += '<div class="bubble"></div>';
                         
                         if (m.by === username) {
                             $m.classList.add('my');
