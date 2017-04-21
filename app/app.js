@@ -61,8 +61,8 @@
                 }
                 
                 // ignore message with status "typing" that older than 15 min
-                if(m.status === 'typing' && (new Date().getTime()) - m.when > 9e5){
-                    
+                if (m.status === 'typing' && (new Date().getTime()) - m.when > 9e5) {
+                    m.message = '';
                 }
                 
                 $m.title = new Date(m.when).toString();
@@ -114,7 +114,7 @@
             newMessage();
             
             // retrieve chat history of the last 6 hour up to 200 messages, once.
-            ChatRoom.orderByChild('when').startAt(new Date().getTime() - 36e5*6).limitToLast(200).once('value', function (r) {
+            ChatRoom.orderByChild('when').startAt(new Date().getTime() - 36e5 * 6).limitToLast(200).once('value', function (r) {
                 $chatroom_body.innerHTML = '';
                 renderChat(r);
                 $message.focus();
