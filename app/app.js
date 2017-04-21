@@ -117,6 +117,7 @@
             ChatRoom.orderByChild('when').startAt(new Date().getTime() - 36e5*6).limitToLast(200).once('value', function (r) {
                 $chatroom_body.innerHTML = '';
                 renderChat(r);
+                $message.focus();
             });
 
         }
