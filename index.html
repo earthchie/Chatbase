@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	
+	<title>Chatbase</title>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	
+    <!-- stylesheets -->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Kanit">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.21/css/uikit.min.css">
+	<link rel="stylesheet" type="text/css" href="app/styles.css">
+	
+	<!--[if IE]>
+	    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+</head>
+<body>
+   
+    <section class="bg-gradient-blue max-height">
+        <div class="adapt-box" style="background:rgba(255,255,255,.95);">
+            <h1>Chatbase</h1>
+            <p>
+                The proof of concept of how to implement Chat with Firebase Database
+            </p>
+            
+			<form id="set-name" class="uk-text-center">
+			    
+				<h2 class="uk-text-center">Your Name</h2>
+				<br>
+				<input type="text" class="uk-input uk-text-center" style="width:300px" value="CrazyAlpaca">
+			</form>
+
+			<div id="chatroom" style="display:none">
+
+				<div class="chat-body">
+					Connecting. Please wait...
+				</div>
+				<form id="message" class="uk-text-center">
+					<input type="text" class="uk-input" placeholder="Your message...">
+				</form>
+
+			</div>
+            
+            <hr>
+            
+            <div class="uk-text-center">
+                <a href="https://github.com/earthchie/Chatbase" class="uk-link-reset" target="_blank">
+                    <svg style="margin-right:15px;margin-top:-12px;" aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewBox="0 0 16 16" width="32">
+                        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                    </svg>
+                    <h2 class="uk-display-inline">Fork me on GitHub</h2>
+                </a>
+            </div>
+
+        </div>
+    </section>
+    
+	<!-- javascript -->
+	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+	<script type="text/javascript">
+		// Initialize Firebase
+		firebase.initializeApp({
+			apiKey: "AIzaSyAuetngIxAFuCoiBcU5ILBL6_KhJi0eVsM",
+			authDomain: "utils-db.firebaseapp.com",
+			databaseURL: "https://utils-db.firebaseio.com",
+			projectId: "utils-db",
+			storageBucket: "utils-db.appspot.com",
+			messagingSenderId: "439885302215"
+		});
+	</script>
+    <script type="text/javascript" src="app/app.js"></script>
+   
+</body>
+</html>
