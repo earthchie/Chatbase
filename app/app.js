@@ -104,6 +104,12 @@
 
             // start new message
             newMessage();
+            
+            // retrieve chat history of the last 6 hour up to 200 messages, once.
+            ChatRoom.orderByChild('when').startAt(new Date().getTime() - 36e5*6).limitToLast(200).once('value', function (r) {
+                $chatroom_body.innerHTML = '';
+                renderChat(r);
+            });
 
         }
 
@@ -149,12 +155,6 @@
             });
         }
     };
-
-    // retrieve chat history of the last 6 hour up to 200 messages, once.
-    ChatRoom.orderByChild('when').startAt(new Date().getTime() - 36e5*6).limitToLast(200).once('value', function (r) {
-        $chatroom_body.innerHTML = '';
-        renderChat(r);
-    });
 
     // render new message
     ChatRoom.orderByChild('when').limitToLast(1).on('value', function (r) {
