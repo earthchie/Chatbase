@@ -9,12 +9,15 @@ The proof of concept of how to implement Chat with Firebase Database
 ```
 {
   "rules": {
-    ".read": "true",
-    ".write": "true",
+    
     
     "chatroom":{
-      ".indexOn": "when"
+      ".indexOn": "when",
+      ".read": "true",
+      ".write": "true",
     }
+    
+    
   }
 }
 ```
